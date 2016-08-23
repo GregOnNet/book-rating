@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../shared/book';
-import { BookComponent } from '../book';
+import { BookCardComponent } from '../book-card';
 import { BooksService } from '../core/books.service';
 
 @Component({
   selector: 'br-dashboard', // <app-dashboard>
   templateUrl: 'dashboard.component.html',
   styleUrls: ['dashboard.component.css'],
-  directives: [BookComponent]
+  directives: [BookCardComponent]
 })
 export class DashboardComponent implements OnInit {
 

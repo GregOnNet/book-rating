@@ -3,11 +3,11 @@
 import { By }           from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { addProviders, async, inject } from '@angular/core/testing';
-import { BookComponent } from './book.component';
+import { BooCardkComponent } from './book-card.component';
 
 describe('Component: Book', () => {
   it('should create an instance', () => {
-    let component = new BookComponent();
+    let component = new BookCardComponent();
     expect(component).toBeTruthy();
   });
 });

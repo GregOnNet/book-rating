@@ -5,11 +5,10 @@ import { Component,
 import { Book } from '../shared/book';
 
 @Component({
-  selector: 'br-book',
-  templateUrl: 'book.component.html',
-  styleUrls: ['book.component.css']
+  selector: 'br-book-card',
+  templateUrl: 'book-card.component.html'
 })
-export class BookComponent {
+export class BookCardComponent {
 
   @Input() book: Book; // [book]=""
   @Output() rated: EventEmitter<Book>;
