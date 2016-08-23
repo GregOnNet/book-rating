@@ -8,7 +8,7 @@ export class Book {
   }
 
   rateDown() {
-    if (this.rating > 1) { this.rating--; }
+    if (this.rating > 0) { this.rating--; }
   }
 }
 

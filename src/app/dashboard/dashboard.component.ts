@@ -12,7 +12,7 @@ export class DashboardComponent implements OnInit {
 
   books: Array<Book>;
 
-  get booksCount(): number { return this.books.length; }
+  get count(): number { return this.books.length; }
 
   constructor() { }
 
@@ -23,8 +23,7 @@ export class DashboardComponent implements OnInit {
     ];
   }
 
-  // Methode
-  count(): number {
-    return this.books.length;
+  reorderBooks(book: Book) {
+    this.books.sort((a, b) => b.rating - a.rating);
   }
 }

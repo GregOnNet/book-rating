@@ -1,3 +1,4 @@
-<small>Gesamtanzahl: {{ booksCount }}</small>
+<small>Gesamtanzahl: {{ count }}</small>
 <br-book [book]="book"
+         (rated)="reorderBooks($event)"
          *ngFor="let book of books"></br-book>
