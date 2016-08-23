@@ -1,9 +1,9 @@
 export class Book {
-  isbn: string;
 
   constructor(public title: string,
               public description: string,
-              public rating = 0) {  }
+              public rating = 0,
+              public isbn?: string) {  }
 
   rateUp() {
     if (this.rating < 5) { this.rating++; }

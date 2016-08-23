@@ -20,20 +20,34 @@ export class DashboardComponent implements OnInit {
   constructor(private booksService: BooksService) { }
 
   ngOnInit(): void {
-    this.booksService.getAll()
-        .subscribe(books => {
-           this.books = books;
-           this.reorderBooks();
-        });
+    this.getBooks();
   }
 
   add(book: Book) {
     this.books.push(book);
     this.booksService.create(book)
-                    .subscribe( response => console.log(response));
+                     .subscribe( response => console.log(response));
   }
 
   reorderBooks(book?: Book) {
     this.books.sort((a, b) => b.rating - a.rating);
+
+    if (book) {
+      this.booksService.update(book)
+                       .subscribe(response => console.log(response));
+    }
+  }
+
+  deleteBook(book: Book) {
+    this.booksService.delete(book)
+                     .subscribe(_ =>  this.getBooks());
+  }
+
+  getBooks() {
+    this.booksService.getAll()
+            .subscribe(books => {
+              this.books = books;
+              this.reorderBooks();
+            });
   }
 }

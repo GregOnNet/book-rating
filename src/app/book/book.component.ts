@@ -13,9 +13,11 @@ export class BookComponent {
 
   @Input() book: Book; // [book]=""
   @Output() rated: EventEmitter<Book>;
+  @Output() deleted: EventEmitter<Book>;
 
   constructor() {
     this.rated = new EventEmitter<Book>();
+    this.deleted = new EventEmitter<Book>();
   }
 
   rateUp() {
@@ -26,5 +28,9 @@ export class BookComponent {
   rateDown() {
     this.book.rateDown();
     this.rated.emit(this.book);
+  }
+
+  delete() {
+    this.deleted.emit(this.book);
   }
 }
