@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { BookDashboardComponent } from './book-dashboard';
+import { BookDashboardComponent } from './book/book-dashboard';
 
 @Component({
   selector: 'app-root', // <app-root>
