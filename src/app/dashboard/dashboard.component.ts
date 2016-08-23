@@ -13,17 +13,27 @@ export class DashboardComponent implements OnInit {
 
   books: Array<Book>;
 
-  get count(): number { return this.books.length; }
+  get count(): number { return this.books === undefined
+                               ? 0
+                               : this.books.length; }
 
   constructor(private booksService: BooksService) { }
 
   ngOnInit(): void {
-    this.books = this.booksService.getAll();
+    this.booksService.getAll()
+        .subscribe(books => {
+           this.books = books;
+           this.reorderBooks();
+        });
   }
 
-  add(book: Book) { this.books.push(book); }
+  add(book: Book) {
+    this.books.push(book);
+    this.booksService.create(book)
+                    .subscribe( response => console.log(response));
+  }
 
-  reorderBooks(book: Book) {
+  reorderBooks(book?: Book) {
     this.books.sort((a, b) => b.rating - a.rating);
   }
 }

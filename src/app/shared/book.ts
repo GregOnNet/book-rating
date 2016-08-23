@@ -1,4 +1,6 @@
 export class Book {
+  isbn: string;
+
   constructor(public title: string,
               public description: string,
               public rating = 0) {  }
