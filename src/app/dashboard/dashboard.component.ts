@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
 import { Book } from '../shared/book';
 import { BookComponent } from '../book';
 
@@ -12,6 +11,8 @@ import { BookComponent } from '../book';
 export class DashboardComponent implements OnInit {
 
   books: Array<Book>;
+  isTrue = true;
+
 
   get count(): number { return this.books.length; }
 
@@ -24,12 +25,7 @@ export class DashboardComponent implements OnInit {
     ];
   }
 
-  add(title: FormControl, description: FormControl) {
-    let book = new Book(title.value, description.value);
-    this.books.push(book);
-
-    title.value = description.value = '';
-  }
+  add(book: Book) { this.books.push(book); }
 
   reorderBooks(book: Book) {
     this.books.sort((a, b) => b.rating - a.rating);

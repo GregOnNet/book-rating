@@ -5,12 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BookComponent } from './book/book.component';
+import { BookFormComponent } from './book-form/book-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    BookComponent
+    BookComponent,
+    BookFormComponent
   ],
   imports: [
     BrowserModule,

@@ -1,26 +1,4 @@
-<h2>Buch hinzufügen</h2>
-<form class="form-horizontal">
-  <!-- title -->
-  <div class="form-group">
-    <label for="title">Title</label>
-    <input id="title"
-           class="form-control"
-           type="text"
-           #title>
-  </div>
-
-  <!-- description -->
-  <div class="form-group">
-    <label for="description">Description</label>
-    <textarea id="description"
-              class="form-control"
-              #description></textarea>
-  </div>
-
-  <button class="btn btn-danger"
-         (click)="add(title, description)">Add</button>
-</form>
-
+<br-book-form (created)="add($event)"></br-book-form>
 <hr>
 
 <small>Gesamtanzahl: {{ count }}</small>
