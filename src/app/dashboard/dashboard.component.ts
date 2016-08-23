@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../shared/book';
 import { BookComponent } from '../book';
+import { BooksService } from '../core/books.service';
 
 @Component({
   selector: 'br-dashboard', // <app-dashboard>
@@ -11,18 +12,13 @@ import { BookComponent } from '../book';
 export class DashboardComponent implements OnInit {
 
   books: Array<Book>;
-  isTrue = true;
-
 
   get count(): number { return this.books.length; }
 
-  constructor() { }
+  constructor(private booksService: BooksService) { }
 
   ngOnInit(): void {
-    this.books = [
-      new Book('Angular 2', '<p>Angular</p> 2 kommt bald'),
-      new Book('Aurelia', 'Die Konkurrenz =)')
-    ];
+    this.books = this.booksService.getAll();
   }
 
   add(book: Book) { this.books.push(book); }

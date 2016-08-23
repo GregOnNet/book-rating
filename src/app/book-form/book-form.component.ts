@@ -1,5 +1,4 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { FormControl } from '@angular/forms';
 
 import { Book } from '../shared/book';
 
@@ -9,15 +8,17 @@ import { Book } from '../shared/book';
   styleUrls: ['book-form.component.css']
 })
 export class BookFormComponent {
+  book: Book;
 
   @Output() created: EventEmitter<Book>;
 
   constructor() {
+    this.book = new Book('', '');
     this.created = new EventEmitter<Book>();
   }
 
-  add(title: FormControl, description: FormControl) {
-    this.created.emit(new Book(title.value, description.value));
-    title.value = description.value = '';
+  add() {
+    this.created.emit(this.book);
+    this.book = new Book('', '');
   }
 }

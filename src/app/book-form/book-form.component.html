@@ -1,22 +1,30 @@
 <h2>Buch hinzufügen</h2>
-<form class="form-horizontal">
+<form class="form-horizontal" 
+      #bookForm="ngForm">
+  
   <!-- title -->
   <div class="form-group">
     <label for="title">Title</label>
     <input id="title"
+           [(ngModel)]="book.title"
+           name="title"
            class="form-control"
            type="text"
-           #title>
+           required
+           minlength="3">
   </div>
 
   <!-- description -->
   <div class="form-group">
     <label for="description">Description</label>
     <textarea id="description"
-              class="form-control"
-              #description></textarea>
+              name="description"
+              [(ngModel)]="book.description"
+              class="form-control"></textarea>
   </div>
 
   <button class="btn btn-danger"
-          (click)="add(title, description)">Add</button>
+          [disabled]="!bookForm.form.valid ||
+                      bookForm.form.untouched"
+          (click)="add()">Add</button>
 </form>
