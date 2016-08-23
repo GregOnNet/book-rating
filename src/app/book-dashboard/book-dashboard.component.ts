@@ -4,12 +4,11 @@ import { BookCardComponent } from '../book-card';
 import { BooksService } from '../core/books.service';
 
 @Component({
-  selector: 'br-dashboard', // <app-dashboard>
-  templateUrl: 'dashboard.component.html',
-  styleUrls: ['dashboard.component.css'],
+  selector: 'br-book-dashboard', // <app-dashboard>
+  templateUrl: 'book-dashboard.component.html',
   directives: [BookCardComponent]
 })
-export class DashboardComponent implements OnInit {
+export class BookDashboardComponent implements OnInit {
 
   books: Array<Book>;
 

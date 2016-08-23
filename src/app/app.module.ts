@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { BookDashboardComponent } from './book-dashboard/book-dashboard.component';
 import { BookCardComponent } from './book-card/book-card.component';
 import { BookFormComponent } from './book-form/book-form.component';
 import { BooksService } from './core/books.service';
@@ -13,7 +13,7 @@ import { BooksService } from './core/books.service';
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
+    BookDashboardComponent,
     BookCardComponent,
     BookFormComponent
   ],
