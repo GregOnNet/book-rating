@@ -5,12 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { bookRouting } from './book.routing';
 
-import { BookDashboardComponent } from './book-dashboard/book-dashboard.component';
-import { BookCardComponent } from './book-card/book-card.component';
-import { BookFormComponent } from './book-form/book-form.component';
-import { BooksService } from './core/books.service';
+import { BookDashboardComponent } from './book-dashboard';
+import { BookDetailsComponent }   from './book-details';
+import { BookCardComponent }      from './book-card';
+import { BookFormComponent }      from './book-form';
+import { BooksService }           from './core/books.service';
 
-const moduleComponents = [BookDashboardComponent, BookCardComponent, BookFormComponent];
+const moduleComponents = [BookDashboardComponent, BookDetailsComponent, BookCardComponent, BookFormComponent];
 
 @NgModule({
   imports:      [CommonModule, FormsModule, ReactiveFormsModule, HttpModule, bookRouting],
