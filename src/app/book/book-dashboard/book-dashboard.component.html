@@ -2,7 +2,10 @@
 <hr>
 
 <small>Gesamtanzahl: {{ count }}</small>
-<br-book-card [book]="book"
-              (rated)="reorderBooks($event)"
-              (deleted)="deleteBook($event)"
-              *ngFor="let book of books"></br-book-card>
+<div class="container-fluid" *ngFor="let book of books">
+  <br-book-card [book]="book"
+                (rated)="reorderBooks($event)"
+                (deleted)="deleteBook($event)"></br-book-card>
+  <a [routerLink]=" ['/book', book?.isbn]" 
+     class="btn btn-default glyphicon glyphicon-new-window"></a>
+</div>

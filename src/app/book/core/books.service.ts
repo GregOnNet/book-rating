@@ -24,6 +24,15 @@ export class BooksService {
                .map(rawBooks => rawBooks.map(r => new Book(r.title, r.description, r.rating, r.isbn)));
   }
 
+  getSingle(isbn: string): Observable<Book> {
+    return this.http.get(`${this.api}/book/${isbn}`)
+               .map(response => response.json()) // JSON Bücher
+               .map(rawBook => new Book(rawBook.title,
+                                        rawBook.description,
+                                        rawBook.rating,
+                                        rawBook.isbn));
+  }
+
   create(book: Book) {
     return this.http.post(`${this.api}/book`,
                           JSON.stringify(book),

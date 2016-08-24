@@ -1,12 +1,10 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { BookDashboardComponent } from './book/book-dashboard';
 
 @Component({
   selector: 'app-root', // <app-root>
   templateUrl: 'app.component.html',
   styleUrls: ['bootstrap.css'],
-  encapsulation: ViewEncapsulation.None,
-  directives: [BookDashboardComponent]
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
   title = 'app works!';

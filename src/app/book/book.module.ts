@@ -11,10 +11,13 @@ import { BookCardComponent }      from './book-card';
 import { BookFormComponent }      from './book-form';
 import { BooksService }           from './core/books.service';
 
-const moduleComponents = [BookDashboardComponent, BookDetailsComponent, BookCardComponent, BookFormComponent];
+const moduleComponents = [BookDashboardComponent,
+                          BookDetailsComponent,
+                          BookCardComponent,
+                          BookFormComponent];
 
 @NgModule({
-  imports:      [CommonModule, FormsModule, ReactiveFormsModule, HttpModule, bookRouting],
+  imports:      [bookRouting, CommonModule, FormsModule, ReactiveFormsModule, HttpModule],
   exports:      [...moduleComponents],
   declarations: [...moduleComponents],
   providers:    [BooksService]
