@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../shared/book';
-import { BookCardComponent } from '../book-card';
 import { BooksService } from '../core/books.service';
 
 @Component({
-  selector: 'br-book-dashboard', // <app-dashboard>
-  templateUrl: 'book-dashboard.component.html',
-  directives: [BookCardComponent]
+  selector: 'br-book-dashboard',
+  templateUrl: 'book-dashboard.component.html'
 })
 export class BookDashboardComponent implements OnInit {
 

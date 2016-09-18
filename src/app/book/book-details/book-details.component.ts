@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { BookCardComponent } from '../book-card';
-
 import { BooksService } from '../core/books.service';
 import { Book } from '../shared/book';
 
 @Component({
   selector: 'br-book-details',
-  templateUrl: 'book-details.component.html',
-  directives: [BookCardComponent]
+  templateUrl: 'book-details.component.html'
 })
 export class BookDetailsComponent implements OnInit {
 
