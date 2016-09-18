@@ -13,7 +13,7 @@
     "tsconfig": "tsconfig.json",
     "prefix": "br",
     "mobile": false,
-    "styles": [],
+    "styles": ["../node_modules/bootstrap/dist/css/bootstrap.css"],
     "scripts": [],
     "environments": {
       "source": "environments/environment.ts",
