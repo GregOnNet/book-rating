@@ -1,13 +1,16 @@
-/* tslint:disable:no-unused-variable */
+import { BookCardComponent } from './book-card.component';
+import { Book } from '../shared/book';
 
-import { By }           from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-import { addProviders, async, inject } from '@angular/core/testing';
-import { BooCardkComponent } from './book-card.component';
+describe('Rating a book up', () => {
+  let card: BookCardComponent;
 
-describe('Component: Book', () => {
-  it('should create an instance', () => {
-    let component = new BookCardComponent();
-    expect(component).toBeTruthy();
+  beforeEach(() => {
+    card = new BookCardComponent();
+    card.book = new Book('Harry Potter', 'The Deathly Hallows');
+  });
+
+  it('increases the rating', () => {
+    card.rateUp();
+    expect(card.book.rating).toBe(1);
   });
 });
