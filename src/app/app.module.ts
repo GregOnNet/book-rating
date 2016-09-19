@@ -4,9 +4,10 @@ import { BookModule } from './book';
 
 import { AppComponent } from './app.component';
 import { appRouting } from './app.routing';
+import { MyCompComponent } from './my-comp/my-comp.component';
 
 @NgModule({
-  declarations:    [AppComponent],
+  declarations:    [AppComponent, MyCompComponent],
   entryComponents: [AppComponent],
   bootstrap:       [AppComponent],
   imports:         [BrowserModule, BookModule, appRouting],
