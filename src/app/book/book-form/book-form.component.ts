@@ -9,13 +9,9 @@ import { Book } from '../shared/book';
 })
 export class BookFormComponent {
   form: FormGroup;
-  book: Book;
-
-  @Output() created: EventEmitter<Book>;
+  @Output() created = new EventEmitter<Book>();
 
   constructor(private fb: FormBuilder) {
-    this.book = new Book('', '');
-    this.created = new EventEmitter<Book>();
 
     // Setup form
     this.form = this.fb.group({
