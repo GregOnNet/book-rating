@@ -12,7 +12,7 @@ export class BooksService {
   jsonHeader: Headers;
 
   constructor(private http: Http) {
-    this.api = 'http://book-monkey2-api.angular2buch.de';
+    this.api = 'https://book-monkey2-api.angular-buch.com';
 
     this.jsonHeader = new Headers();
     this.jsonHeader.append('Content-Type', 'application/json');
