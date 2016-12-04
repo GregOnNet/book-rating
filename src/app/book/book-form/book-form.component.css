@@ -1,7 +1,7 @@
-.ng-valid.ng-dirty {
+.form-control.ng-valid.ng-dirty {
   border-left: 4px solid lightgreen;
 }
 
-.ng-invalid.ng-dirty {
+.form-control.ng-invalid.ng-dirty {
   border-left: 4px solid orangered;
 }

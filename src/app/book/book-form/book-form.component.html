@@ -1,8 +1,8 @@
 <h2>Buch hinzufügen</h2>
-<form class="form-horizontal" 
+<form class="container"
       [formGroup]="form"
       (ngSubmit)="add()">
-  
+
   <!-- title -->
   <div class="form-group">
     <label for="title">Title</label>
@@ -27,7 +27,9 @@
               class="form-control"></textarea>
   </div>
 
-  <button type="submit"
-          class="btn btn-danger"
-          [disabled]="!form.valid">Add</button>
+  <div class="form-group">
+    <button type="submit"
+            class="btn btn-danger"
+            [disabled]="!form.valid">Add</button>
+  </div>
 </form>
